@@ -1,11 +1,16 @@
-import ClickCounter from "./HOC/ClickCounter";
-import HoverCounter from "./HOC/HoverCounter";
+import ClickCounter from "./RenderProps/ClickCount";
+import HoverCounter from "./RenderProps/HoverCount";
+import Common from "./RenderProps/Common";
 
 const MainComponent = () => {
     return (
         <div className="timerContainer">
-            <ClickCounter />
-            <HoverCounter />
+            <Common renderProps = { (count,increment) => (
+                <ClickCounter  count = {count} increment = {increment}/>
+            )}/>
+            <Common renderProps = { (count,increment) => (
+                <HoverCounter  count = {count} increment = {increment}/>
+            )}/>
         </div>
     )
 }
